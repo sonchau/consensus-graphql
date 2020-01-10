@@ -10,7 +10,7 @@ export default async () => {
 
   await createConnection();
 
-  const server = new ApolloServer({ typeDefs: schema, resolvers });
+  const server = new ApolloServer({ typeDefs: schema, resolvers, introspection:true });
   server.applyMiddleware({ app, cors: { origin: ['http://localhost:3000'] } });
 
   return app;
