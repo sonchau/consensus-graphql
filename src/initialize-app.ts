@@ -17,7 +17,7 @@ export default async () => {
       playground: true,
     }
   );
-  server.applyMiddleware({ app, cors: { origin: ['http://localhost:3000'] } });
+  server.applyMiddleware({ app, cors: { origin: ['https://consensus-geografia.herokuapp.com/'] } });
 
   return app;
 };
