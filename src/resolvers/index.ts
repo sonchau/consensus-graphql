@@ -5,17 +5,23 @@ import changeStatus from './mutations/change-status';
 import deleteTask from './mutations/delete-task';
 import tasks from './queries/tasks';
 import task from './queries/task';
+import issue from './queries/issue';
+import createIssue from './mutations/create-issue';
+import updateIssue from './mutations/update-issue';
 
 export default {
   Query: {
     hello,
     tasks,
-    task
+    task,
+    issue
   },
   Mutation: {
     createTask,
     updateTask,
     changeStatus,
-    deleteTask
+    deleteTask,
+    createIssue,
+    updateIssue
   }
 };

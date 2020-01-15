@@ -22,10 +22,25 @@ export default gql`
     status: TaskStatus
   }
 
+  type Issue {
+    id: Int!
+    issue: String!
+  }
+
+  input CreateIssue {
+    issue: String!
+  }
+
+  input UpdateIssue {
+    id: Int!
+    issue: String
+  }
+
   type Query {
     hello: String
     tasks(status: TaskStatus): [Task!]!
     task(id: Int!): Task
+    issue(id: Int!): Issue
   }
 
   type Mutation {
@@ -33,6 +48,8 @@ export default gql`
     updateTask(input: UpdateTaskInput!): Task
     changeStatus(id: Int!, status: TaskStatus!): Task
     deleteTask(id: Int!): Task
+    createIssue(input: CreateIssue!): Issue
+    updateIssue(input: UpdateIssue!): Issue
   }
 `;
 
@@ -45,3 +62,13 @@ export interface UpdateTaskInput {
   title: string;
   status: TaskStatus;
 }
+
+export interface CreateIssue {
+  issue: string;
+}
+
+export interface UpdateIssue {
+  id: number;
+  issue: string;
+}
+
