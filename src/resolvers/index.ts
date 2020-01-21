@@ -5,6 +5,7 @@ import changeStatus from './mutations/change-status';
 import deleteTask from './mutations/delete-task';
 import tasks from './queries/tasks';
 import task from './queries/task';
+import taskTitle from './queries/taskTitle';
 import issue from './queries/issue';
 import criteria from './queries/criteria';
 import criterias from './queries/criterias';
@@ -19,6 +20,7 @@ export default {
     hello,
     tasks,
     task,
+    taskTitle,
     issue,
     criteria,
     criterias

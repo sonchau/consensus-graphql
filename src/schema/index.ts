@@ -62,6 +62,7 @@ export default gql`
     hello: String
     tasks(status: TaskStatus): [Task!]!
     task(id: Int!): Task
+    taskTitle(title: String!): Task
     issue(id: Int!): Issue
     
     criteria(id: Int!): Criteria
