@@ -57,16 +57,45 @@ export default gql`
     score: Int!
   }
 
+#Setting
+type Setting {
+    id: Int!
+    task: String!
+    criteria: String!
+    score: Int!
+  }
+
+  input CreateSettingInput {
+    task: String!
+    criteria: String!
+    score: Int!
+  }
+
+  input UpdateSettingInput {
+    id: Int!
+    task: String!
+    criteria: String!
+    score: Int!
+  }
+
 #Query
   type Query {
     hello: String
+    #task
     tasks(status: TaskStatus): [Task!]!
     task(id: Int!): Task
     taskTitle(title: String!): Task
+
+    #issue
     issue(id: Int!): Issue
     
+    #criteria
     criteria(id: Int!): Criteria
     criterias: [Criteria!]!
+
+    #setting
+    setting(id: Int!): Setting
+    settings: [Setting!]!
   }
 
 #Mutation
@@ -86,6 +115,11 @@ export default gql`
     createCriteria(input: CreateCriteriaInput!): Criteria
     updateCriteria(input: UpdateCriteriaInput!): Criteria
     deleteCriteria(id: Int!): Criteria
+
+    #Setting
+    createSetting(input: CreateSettingInput!): Setting
+    updateSetting(input: UpdateSettingInput!): Setting
+    deleteSetting(id: Int!): Setting 
   }
 `;
 
@@ -119,5 +153,19 @@ export interface CreateCriteriaInput {
 export interface UpdateCriteriaInput {
   id: number;
   name: string;
+  score: number;
+}
+
+// Setting interface
+export interface CreateSettingInput {
+  task: string;
+  criteria: string;
+  score: number;
+}
+
+export interface UpdateSettingInput {
+  id: number;
+  task: string;
+  criteria: string;
   score: number;
 }

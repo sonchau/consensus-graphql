@@ -15,6 +15,13 @@ import createCriteria from './mutations/create-criteria';
 import updateCriteria from './mutations/update-criteria';
 import deleteCriteria from './mutations/delete-criteria';
 
+//
+import setting from './queries/setting';
+import settings from './queries/settings';
+import createSetting from './mutations/create-setting';
+import updateSetting from './mutations/update-setting';
+import deleteSetting from './mutations/delete-setting';
+
 export default {
   Query: {
     hello,
@@ -23,7 +30,9 @@ export default {
     taskTitle,
     issue,
     criteria,
-    criterias
+    criterias,
+    setting,
+    settings
   },
   Mutation: {
     createTask,
@@ -34,6 +43,9 @@ export default {
     updateIssue,
     createCriteria,
     updateCriteria,
-    deleteCriteria
+    deleteCriteria,
+    createSetting,
+    updateSetting,
+    deleteSetting
   }
 };
