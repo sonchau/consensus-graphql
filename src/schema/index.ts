@@ -95,6 +95,7 @@ type Setting {
 
     #setting
     setting(id: Int!): Setting
+    settingByTaskName(task: String!): [Setting!]!
     settings: [Setting!]!
   }
 

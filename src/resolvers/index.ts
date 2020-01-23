@@ -15,8 +15,9 @@ import createCriteria from './mutations/create-criteria';
 import updateCriteria from './mutations/update-criteria';
 import deleteCriteria from './mutations/delete-criteria';
 
-//
+// setting
 import setting from './queries/setting';
+import settingByTaskName from './queries/settingByTaskName';
 import settings from './queries/settings';
 import createSetting from './mutations/create-setting';
 import updateSetting from './mutations/update-setting';
@@ -32,7 +33,8 @@ export default {
     criteria,
     criterias,
     setting,
-    settings
+    settings,
+    settingByTaskName
   },
   Mutation: {
     createTask,
