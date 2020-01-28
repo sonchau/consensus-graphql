@@ -112,7 +112,7 @@ type Setting {
     #Issue
     createIssue(input: CreateIssueInput!): Issue
     updateIssue(input: UpdateIssueInput!): Issue
-    deleteIssue(is: Int!): Issue
+    deleteIssue(id: Int!): Issue
 
     #Criteria
     createCriteria(input: CreateCriteriaInput!): Criteria
