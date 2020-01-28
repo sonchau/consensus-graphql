@@ -30,11 +30,11 @@ export default gql`
     issue: String!
   }
 
-  input CreateIssue {
+  input CreateIssueInput {
     issue: String!
   }
 
-  input UpdateIssue {
+  input UpdateIssueInput {
     id: Int!
     issue: String
   }
@@ -88,6 +88,7 @@ type Setting {
 
     #issue
     issue(id: Int!): Issue
+    issues: [Issue]!
     
     #criteria
     criteria(id: Int!): Criteria
@@ -109,8 +110,9 @@ type Setting {
     deleteTask(id: Int!): Task
     
     #Issue
-    createIssue(input: CreateIssue!): Issue
-    updateIssue(input: UpdateIssue!): Issue
+    createIssue(input: CreateIssueInput!): Issue
+    updateIssue(input: UpdateIssueInput!): Issue
+    deleteIssue(is: Int!): Issue
 
     #Criteria
     createCriteria(input: CreateCriteriaInput!): Criteria
@@ -136,11 +138,11 @@ export interface UpdateTaskInput {
 }
 
 // Issue Interface
-export interface CreateIssue {
+export interface CreateIssueInput {
   issue: string;
 }
 
-export interface UpdateIssue {
+export interface UpdateIssueInput {
   id: number;
   issue: string;
 }

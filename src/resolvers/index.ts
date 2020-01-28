@@ -7,10 +7,12 @@ import tasks from './queries/tasks';
 import task from './queries/task';
 import taskTitle from './queries/taskTitle';
 import issue from './queries/issue';
+import issues from './queries/issues';
 import criteria from './queries/criteria';
 import criterias from './queries/criterias';
 import createIssue from './mutations/create-issue';
 import updateIssue from './mutations/update-issue';
+import deleteIssue from './mutations/delete-issue';
 import createCriteria from './mutations/create-criteria';
 import updateCriteria from './mutations/update-criteria';
 import deleteCriteria from './mutations/delete-criteria';
@@ -30,6 +32,7 @@ export default {
     task,
     taskTitle,
     issue,
+    issues,
     criteria,
     criterias,
     setting,
@@ -43,6 +46,7 @@ export default {
     deleteTask,
     createIssue,
     updateIssue,
+    deleteIssue,
     createCriteria,
     updateCriteria,
     deleteCriteria,
