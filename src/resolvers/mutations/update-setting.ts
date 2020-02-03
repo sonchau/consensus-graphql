@@ -7,12 +7,7 @@ export default async (
   _root: any,
   { input }: { input: UpdateSettingInput }
 ): Promise<Setting> => {
-  if (!input.task) {
-    throw new UserInputError('taskempty', { errorKey: 'task' });
-  }
-  if (!input.criteria) {
-    throw new UserInputError('criteria_empty', { errorKey: 'criteria' });
-  }
+
   if (!input.score) {
     throw new UserInputError('score_empty', { errorKey: 'score' });
   }
@@ -23,8 +18,14 @@ export default async (
     throw new UserInputError('setting_not_found', { errorKey: 'general' });
   }
 
-  setting.task = input.task;
-  setting.criteria = input.criteria;
+  if(input.task) {
+    setting.task = input.task;
+  }
+  
+  if(input.criteria) {
+    setting.criteria = input.criteria;
+  }
+  
   setting.score = input.score;
 
   await settingRepo.save(setting);

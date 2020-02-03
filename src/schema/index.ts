@@ -73,8 +73,8 @@ type Setting {
 
   input UpdateSettingInput {
     id: Int!
-    task: String!
-    criteria: String!
+    task: String
+    criteria: String
     score: Int!
   }
 
