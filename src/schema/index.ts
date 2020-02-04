@@ -80,8 +80,8 @@ type Setting {
     task: String
     criteria: String
     score: Int!
-    taskId: Int!
-    criteriaId: Int!
+    taskId: Int
+    criteriaId: Int
   }
 
 #Query
