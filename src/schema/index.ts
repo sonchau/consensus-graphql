@@ -63,12 +63,16 @@ type Setting {
     task: String!
     criteria: String!
     score: Int!
+    taskId: Int!
+    criteriaId: Int!
   }
 
   input CreateSettingInput {
     task: String!
     criteria: String!
     score: Int!
+    taskId: Int!
+    criteriaId: Int!
   }
 
   input UpdateSettingInput {
@@ -76,6 +80,8 @@ type Setting {
     task: String
     criteria: String
     score: Int!
+    taskId: Int!
+    criteriaId: Int!
   }
 
 #Query
@@ -164,6 +170,8 @@ export interface CreateSettingInput {
   task: string;
   criteria: string;
   score: number;
+  taskId: number;
+  criteriaId: number;
 }
 
 export interface UpdateSettingInput {
@@ -171,4 +179,6 @@ export interface UpdateSettingInput {
   task: string;
   criteria: string;
   score: number;
+  taskId: number;
+  criteriaId: number;
 }

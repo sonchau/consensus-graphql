@@ -21,9 +21,15 @@ export default async (
   if(input.task) {
     setting.task = input.task;
   }
-  
+  if(input.taskId) {
+    setting.taskId = input.taskId;
+  }
+
   if(input.criteria) {
     setting.criteria = input.criteria;
+  }
+  if(setting.criteriaId) {
+    setting.criteriaId = input.criteriaId
   }
   
   setting.score = input.score;

@@ -17,6 +17,9 @@ export default async (
   setting.task = input.task;
   setting.criteria = input.criteria;
   setting.score = input.score;
+  setting.taskId = input.taskId;
+  setting.criteriaId = input.criteriaId;
+
   const settingRepo = getRepository(Setting);
   await settingRepo.save(setting);
   return setting;

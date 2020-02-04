@@ -13,4 +13,13 @@ export class Setting {
 
   @Column({ type: 'int' })
   score: number | undefined;
+
+  @Column({ type: 'int' })
+  taskId: number | undefined;
+
+  @Column({ type: 'int' })
+  criteriaId: number | undefined;
+
+
+
 }
