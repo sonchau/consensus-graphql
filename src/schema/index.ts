@@ -133,6 +133,9 @@ type Setting {
     updateSetting(input: UpdateSettingInput!): Setting
     deleteSetting(id: Int!): Setting
     clearSettings: Boolean
+
+    #Reset
+    reset: Boolean
   }
 `;
 

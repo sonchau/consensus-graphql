@@ -35,6 +35,9 @@ import updateSetting from './mutations/update-setting';
 import deleteSetting from './mutations/delete-setting';
 import clearSettings from './mutations/clear-settings';
 
+// Reset
+import reset from './mutations/reset';
+
 export default {
   Query: {
     hello,
@@ -66,6 +69,7 @@ export default {
     createSetting,
     updateSetting,
     deleteSetting,
-    clearSettings
+    clearSettings,
+    reset
   }
 };
