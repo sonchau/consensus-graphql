@@ -114,21 +114,25 @@ type Setting {
     updateTask(input: UpdateTaskInput!): Task
     changeStatus(id: Int!, status: TaskStatus!): Task
     deleteTask(id: Int!): Task
-    
+    clearTasks: Boolean
+
     #Issue
     createIssue(input: CreateIssueInput!): Issue
     updateIssue(input: UpdateIssueInput!): Issue
     deleteIssue(id: Int!): Issue
+    clearIssues: Boolean
 
     #Criteria
     createCriteria(input: CreateCriteriaInput!): Criteria
     updateCriteria(input: UpdateCriteriaInput!): Criteria
     deleteCriteria(id: Int!): Criteria
+    clearCriterias: Boolean
 
     #Setting
     createSetting(input: CreateSettingInput!): Setting
     updateSetting(input: UpdateSettingInput!): Setting
-    deleteSetting(id: Int!): Setting 
+    deleteSetting(id: Int!): Setting
+    clearSettings: Boolean
   }
 `;
 
