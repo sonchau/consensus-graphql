@@ -39,6 +39,23 @@ export default gql`
     issue: String
   }
 
+#Note
+  type Note {
+    id: Int!
+    note: String!
+    issue: Issue
+  }
+
+  input CreateNoteInput {
+    note: String!
+    
+  }
+
+  input UpdateNoteInput {
+    id: Int! #this is the issue Id, forgeign key of note table
+    note: String
+  }
+
 #Criteria
   type Criteria {
     id: Int!
@@ -95,6 +112,10 @@ type Setting {
     #issue
     issue(id: Int!): Issue
     issues: [Issue]!
+
+    #note
+    note(id: Int): Note
+    notes: [Note]!
     
     #criteria
     criteria(id: Int!): Criteria
@@ -121,6 +142,12 @@ type Setting {
     updateIssue(input: UpdateIssueInput!): Issue
     deleteIssue(id: Int!): Issue
     clearIssues: Boolean
+
+    #Note
+    createNote(input: CreateNoteInput!): Note
+    updateNote(input: UpdateNoteInput!): Note
+    deleteNote(id: Int!): Note
+    clearNotes: Boolean
 
     #Criteria
     createCriteria(input: CreateCriteriaInput!): Criteria
@@ -158,6 +185,16 @@ export interface CreateIssueInput {
 export interface UpdateIssueInput {
   id: number;
   issue: string;
+}
+
+// Note Interface
+export interface CreateNoteInput {
+  note: string;
+}
+
+export interface UpdateNoteInput {
+  note: string;
+  issueId: number;
 }
 
 // Criteria interface

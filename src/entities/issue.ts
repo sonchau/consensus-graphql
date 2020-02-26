@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToOne } from 'typeorm';
+import {Note} from './note';
 
 @Entity()
 export class Issue {
@@ -8,4 +9,9 @@ export class Issue {
   @Column({ type: 'text'})
   issue: string = '';
 
+  @OneToOne(type => Note, note => note.issue)
+  note: Note | undefined;
+
+  // @OneToOne(type => Note, note => note.issue)
+  // note: Note = new Note
 }

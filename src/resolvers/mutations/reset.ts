@@ -3,6 +3,7 @@ import { Task } from '../../entities/task';
 import { Issue } from '../../entities/issue';
 import { Setting } from '../../entities/setting';
 import { Criteria } from '../../entities/criteria';
+import { Note } from '../../entities/note';
 
 export default async (_root: any) => {
   // clear Task
@@ -20,6 +21,11 @@ export default async (_root: any) => {
   // clear Criteria
   const criteriaRepo = getRepository(Criteria);
   await criteriaRepo.clear();
+  
+  // clear Criteria
+  const noteRepo = getRepository(Not);
+  await noteRepo.clear();
+
 
   return true;
 };

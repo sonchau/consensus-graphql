@@ -35,6 +35,15 @@ import updateSetting from './mutations/update-setting';
 import deleteSetting from './mutations/delete-setting';
 import clearSettings from './mutations/clear-settings';
 
+// Note
+import note from './queries/note';
+import notes from './queries/notes';
+import createNote from './mutations/create-note';
+import updateNote from './mutations/update-note';
+import deleteNote from './mutations/delete-note';
+import clearNotes from './mutations/clear-notes';
+
+
 // Reset
 import reset from './mutations/reset';
 
@@ -46,6 +55,8 @@ export default {
     taskTitle,
     issue,
     issues,
+    note,
+    notes,
     criteria,
     criterias,
     setting,
@@ -70,6 +81,10 @@ export default {
     updateSetting,
     deleteSetting,
     clearSettings,
+    createNote,
+    updateNote,
+    deleteNote,
+    clearNotes,
     reset
   }
 };
