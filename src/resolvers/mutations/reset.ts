@@ -23,9 +23,8 @@ export default async (_root: any) => {
   await criteriaRepo.clear();
   
   // clear Criteria
-  const noteRepo = getRepository(Not);
+  const noteRepo = getRepository(Note);
   await noteRepo.clear();
-
 
   return true;
 };

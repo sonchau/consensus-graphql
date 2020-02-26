@@ -9,9 +9,7 @@ export class Issue {
   @Column({ type: 'text'})
   issue: string = '';
 
-  @OneToOne(type => Note, note => note.issue)
+  @OneToOne(() => Note, note => note.issue)
   note: Note | undefined;
 
-  // @OneToOne(type => Note, note => note.issue)
-  // note: Note = new Note
 }

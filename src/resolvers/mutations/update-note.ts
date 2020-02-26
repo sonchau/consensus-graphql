@@ -2,8 +2,7 @@ import { getRepository } from 'typeorm';
 import { Note } from '../../entities/note';
 import { UpdateNoteInput } from '../../schema';
 import { UserInputError } from 'apollo-server-core';
-import {Issue} from '../../entities/issue';
-
+//import {Issue} from '../../entities/issue';
 
 export default async (
   _root: any,
@@ -26,7 +25,7 @@ export default async (
   // let issueRepository = getRepository(Issue);
   // let issue = await issueRepository.findOne({ where: { id: input.id }, relations: ["note"] });
   // console.log('issue', issue)
-  
+
   return note
 
 };
