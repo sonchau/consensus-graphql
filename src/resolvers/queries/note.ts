@@ -1,5 +1,4 @@
 import { getRepository } from 'typeorm';
-import { Note } from '../../entities/note';
 import {Issue} from '../../entities/issue';
 
 //NOTE: this id is the issueId from issue table
