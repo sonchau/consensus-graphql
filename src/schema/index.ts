@@ -43,7 +43,7 @@ export default gql`
   type Note {
     id: Int!
     note: String!
-    issue: Issue
+    #issue: Issue
   }
 
   input CreateNoteInput {
@@ -194,7 +194,7 @@ export interface CreateNoteInput {
 
 export interface UpdateNoteInput {
   note: string;
-  issueId: number;
+  id: number;
 }
 
 // Criteria interface
