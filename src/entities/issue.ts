@@ -9,7 +9,7 @@ export class Issue {
   @Column({ type: 'text'})
   issue: string = '';
 
-  @OneToOne(() => Note, note => note.issue)
+  @OneToOne(() => Note, note => note.issue, { onDelete: 'CASCADE' })
   note: Note | undefined;
 
 }

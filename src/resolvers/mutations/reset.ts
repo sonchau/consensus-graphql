@@ -22,7 +22,7 @@ export default async (_root: any) => {
   const criteriaRepo = getRepository(Criteria);
   await criteriaRepo.clear();
   
-  // clear Criteria
+  // clear Note
   const noteRepo = getRepository(Note);
   await noteRepo.clear();
 
