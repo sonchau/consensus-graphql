@@ -17,7 +17,7 @@ export default async () => {
       context: ({ req }) => {
         // pass the request information through to the model
         //console.log('req 1', req.headers)
-        const token = req || '';
+        //const token = req || '';
       },
       introspection:true,
       playground: true,
@@ -32,7 +32,7 @@ export default async () => {
   const httpServer = http.createServer(app);
   server.installSubscriptionHandlers(httpServer);
 
-  // console.log('server graphqlPath', server.graphqlPath)
-  // console.log('server subscriptionsPath', server.subscriptionsPath)
+  //console.log('server graphqlPath', server.graphqlPath)
+  //console.log('server subscriptionsPath', server.subscriptionsPath)
   return httpServer;
 };

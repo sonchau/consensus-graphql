@@ -16,7 +16,7 @@ import createIssue from './mutations/create-issue';
 import updateIssue from './mutations/update-issue';
 import deleteIssue from './mutations/delete-issue';
 import clearIssues from './mutations/clear-issues';
-import changeIssue from './subscription/change-issue';
+//import changeIssue from './subscription/change-issue';
 import pubsub from '../subscription/pubsub';
 
 // Criteria
