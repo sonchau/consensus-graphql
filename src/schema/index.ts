@@ -164,6 +164,11 @@ type Setting {
     #Reset
     reset: Boolean
   }
+
+#Subscription  
+  type Subscription {
+    changeIssue: Issue
+  }
 `;
 
 // Task interface

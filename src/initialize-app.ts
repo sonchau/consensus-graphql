@@ -4,6 +4,7 @@ import { ApolloServer } from 'apollo-server-express';
 import { createConnection } from 'typeorm';
 import schema from './schema';
 import resolvers from './resolvers';
+import http from 'http';
 
 export default async () => {
   const app = express();
@@ -15,7 +16,7 @@ export default async () => {
       resolvers, 
       context: ({ req }) => {
         // pass the request information through to the model
-        console.log('req', req.headers)
+        //console.log('req 1', req.headers)
         const token = req || '';
       },
       introspection:true,
@@ -27,6 +28,11 @@ export default async () => {
       origin: true
     },
    });
+  
+  const httpServer = http.createServer(app);
+  server.installSubscriptionHandlers(httpServer);
 
-  return app;
+  // console.log('server graphqlPath', server.graphqlPath)
+  // console.log('server subscriptionsPath', server.subscriptionsPath)
+  return httpServer;
 };

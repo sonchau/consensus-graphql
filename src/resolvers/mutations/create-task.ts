@@ -13,7 +13,7 @@ export default async (
   const task = new Task();
   task.title = input.title;
   task.status = TaskStatus.active;
-  console.log('task', task)
+  //console.log('task', task)
   const taskRepo = getRepository(Task);
   await taskRepo.save(task);
   return task;

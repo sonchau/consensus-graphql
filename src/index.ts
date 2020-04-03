@@ -4,8 +4,8 @@ import initializeApp from './initialize-app';
 const PORT = 3001;
 
 initializeApp()
-  .then(app => {
-    app.listen({ port: process.env.PORT || PORT }, () => {
+  .then(httpServer => {
+    httpServer.listen({ port: process.env.PORT || PORT }, () => {
       console.log('server is up')
     })
   })

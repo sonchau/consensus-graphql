@@ -2,6 +2,7 @@ import { getRepository } from 'typeorm';
 import { Issue } from '../../entities/issue';
 import { UpdateIssueInput } from '../../schema';
 import { UserInputError } from 'apollo-server-core';
+import pubsub from '../../subscription/pubsub';
 
 export default async (
   _root: any,
@@ -19,6 +20,10 @@ export default async (
   }
 
   issue.issue = input.issue;
+  pubsub.publish("issueTitleChanged", {
+    changeIssue: issue
+  });
+
   await issueRepo.save(issue);
   return issue;
 };
