@@ -14,11 +14,11 @@ export default async () => {
   const server = new ApolloServer(
     { typeDefs: schema, 
       resolvers, 
-      context: ({ req }) => {
+      //context: ({ req }) => {
         // pass the request information through to the model
         //console.log('req 1', req.headers)
         //const token = req || '';
-      },
+      //},
       introspection:true,
       playground: true,
     }
