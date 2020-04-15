@@ -13,6 +13,7 @@ export default async (
   }
   const issue = new Issue();
   issue.issue = input.issue;
+  issue.user = input.user
 
   const issueRepo = getRepository(Issue);
   await issueRepo.save(issue);

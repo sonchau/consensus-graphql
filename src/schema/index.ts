@@ -28,10 +28,12 @@ export default gql`
   type Issue {
     id: Int!
     issue: String!
+    user: String!
   }
 
   input CreateIssueInput {
     issue: String!
+    user: String!
   }
 
   input UpdateIssueInput {
@@ -185,6 +187,7 @@ export interface UpdateTaskInput {
 // Issue Interface
 export interface CreateIssueInput {
   issue: string;
+  user: string
 }
 
 export interface UpdateIssueInput {
