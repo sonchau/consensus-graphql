@@ -63,11 +63,13 @@ export default gql`
     id: Int!
     name: String!
     score: Int!
+    issue: Issue
   }
 
   input CreateCriteriaInput {
     name: String!
     score: Int!
+    issue: Int!
   }
 
   input UpdateCriteriaInput {
@@ -209,6 +211,7 @@ export interface UpdateNoteInput {
 export interface CreateCriteriaInput {
   name: string;
   score: number;
+  issue: number;
 }
 
 export interface UpdateCriteriaInput {

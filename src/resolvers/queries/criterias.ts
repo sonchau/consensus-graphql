@@ -3,6 +3,6 @@ import { Criteria } from '../../entities/criteria';
 
 export default (_root: any) => {
   const criteriaRepo = getRepository(Criteria);
-  const criterias = criteriaRepo.find();
+  const criterias = criteriaRepo.find({ relations: ["issue"] });
   return criterias;
 };

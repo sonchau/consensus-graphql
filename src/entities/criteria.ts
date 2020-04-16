@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import {Issue} from './issue'
 
 @Entity()
 export class Criteria {
@@ -10,4 +11,8 @@ export class Criteria {
 
   @Column({ type: 'int' })
   score: number | undefined;
+  
+  @ManyToOne(() => Issue, issue=> issue.criterias)
+  issue: Issue | undefined;
+
 }

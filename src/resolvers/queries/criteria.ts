@@ -2,7 +2,7 @@ import { getRepository } from 'typeorm';
 import { Criteria } from '../../entities/criteria';
 
 export default async (_root: any, { id }: { id: number }) => {
-  const taskRepo = getRepository(Criteria);
-  const task = await taskRepo.findOne({ where: { id } });
-  return task;
+  const criteriaRepo = getRepository(Criteria);
+  const criteria = await criteriaRepo.findOne({ where: { id }, relations: ["issue"] });
+  return criteria;
 };
