@@ -124,6 +124,7 @@ type Setting {
     #criteria
     criteria(id: Int!): Criteria
     criterias: [Criteria!]!
+    criteriasByIssueId(issueId: Int!): [Criteria!]!
 
     #setting
     setting(id: Int!): Setting

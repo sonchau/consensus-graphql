@@ -22,6 +22,7 @@ import pubsub from '../subscription/pubsub';
 // Criteria
 import criteria from './queries/criteria';
 import criterias from './queries/criterias';
+import criteriasByIssueId from './queries/criteriasByIssueId';
 import createCriteria from './mutations/create-criteria';
 import updateCriteria from './mutations/update-criteria';
 import deleteCriteria from './mutations/delete-criteria';
@@ -61,6 +62,7 @@ export default {
     notes,
     criteria,
     criterias,
+    criteriasByIssueId,
     setting,
     settings,
     settingByTaskName
